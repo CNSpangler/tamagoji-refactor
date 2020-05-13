@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import Controls from '../components/controls/Controls';
 import Face from '../components/face/Face';
 import { getFace } from '../selectors/moodSelector';
+import { useSelector } from 'react-redux';
 
 export default class Moods extends Component {
 
   render() {
-    const face = getFace(state);
+    const face = useSelector(getFace);
 
     return (
       <>
