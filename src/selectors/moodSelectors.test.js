@@ -1,4 +1,4 @@
-import { getFace } from './moodSelector';
+import { getFace, getCoffees } from './moodSelector';
 
 describe('mood selectors', () => {
   it('returns angry face if hangry', () => {
@@ -25,4 +25,9 @@ describe('mood selectors', () => {
     expect(face).toEqual('😴');
   });
 
+  it('returns coffees', () => {
+    const state = { coffees: 15 };
+    const coffees = getCoffees(state);
+    expect(coffees).toEqual(15);
+  });
 });

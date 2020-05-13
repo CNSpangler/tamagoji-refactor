@@ -1,11 +1,16 @@
 import React from 'react';
 import Controls from '../components/controls/Controls';
 import Face from '../components/face/Face';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { DRINK_COFFEE, EAT_SNACK, TAKE_NAP, STUDY } from '../actions/moodActions';
+import { getCoffees, getSnacks, getNaps, getStudies } from '../selectors/moodSelector';
 
 const Moods = () => {
   const dispatch = useDispatch();
+  const coffees = useSelector(getCoffees);
+  const snacks = useSelector(getSnacks);
+  const naps = useSelector(getNaps);
+  const studies = useSelector(getStudies);
 
   return (
     <>
