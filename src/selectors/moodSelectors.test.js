@@ -1,4 +1,4 @@
-import { getFace, getCoffees } from './moodSelector';
+import { getFace, getCoffees, getSnacks, getNaps, getStudies } from './moodSelector';
 
 describe('mood selectors', () => {
   it('returns angry face if hangry', () => {
@@ -29,5 +29,23 @@ describe('mood selectors', () => {
     const state = { coffees: 15 };
     const coffees = getCoffees(state);
     expect(coffees).toEqual(15);
+  });
+
+  it('returns snacks', () => {
+    const state = { snacks: 15 };
+    const snacks = getSnacks(state);
+    expect(snacks).toEqual(15);
+  });
+  
+  it('returns naps', () => {
+    const state = { naps: 15 };
+    const naps = getNaps(state);
+    expect(naps).toEqual(15);
+  });
+
+  it('returns studies', () => {
+    const state = { studies: 15 };
+    const studies = getStudies(state);
+    expect(studies).toEqual(15);
   });
 });
