@@ -15,6 +15,6 @@ export default function reducer(state = initialState, action) {
       return { ...state, studies: state.studies + 1 };
     default:
       console.log(`unhandled type: ${action.type}`);
-      break;
+      return state;
   }
 }
