@@ -1,11 +1,11 @@
-import { drinkCoffee, DRINK_COFFEE } from '../actions/moodActions.js';
+import { getFace } from './moodSelector';
 
 describe('mood selectors', () => {
-  it('gets', () => {
-    const state = { coffees: 0 };
+  it('returns angry face if hangry', () => {
+    const state = { coffees: 0, naps: 0, snacks: 0 };
 
-    const coffees = drinkCoffee(state);
+    const face = getFace(state);
 
-    expect(coffees).toEqual({ type: DRINK_COFFEE });
+    expect(face).toEqual('🤬');
   });
 });
